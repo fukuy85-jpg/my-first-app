@@ -1,11 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    ようこそ。
-</body>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101827">
+    <title>ちいさな横スクロール冒険</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">MINI PLATFORMER</p>
+          <h1>ちいさな横スクロール冒険</h1>
+        </div>
+        <p class="instructions">移動: ← → / A D　ジャンプ: Space / ↑</p>
+      </header>
+
+      <section class="game-frame" aria-label="横スクロールアクションゲーム">
+        <canvas id="game" width="960" height="540" aria-label="ゲーム画面"></canvas>
+        <div class="game-overlay" id="game-overlay" hidden>
+          <p id="overlay-message"></p>
+          <button id="restart-button" type="button">もう一度遊ぶ</button>
+        </div>
+      </section>
+
+      <nav class="touch-controls" aria-label="タッチ操作">
+        <button class="control-button" type="button" data-control="left" aria-label="左へ移動">←</button>
+        <button class="control-button" type="button" data-control="right" aria-label="右へ移動">→</button>
+        <button class="control-button jump-button" type="button" data-control="jump" aria-label="ジャンプ">ジャンプ</button>
+      </nav>
+      <p class="hint">トゲに当たったり穴に落ちたりするとスタート地点に戻ります。旗を目指そう！</p>
+    </main>
+  </body>
 </html>

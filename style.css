@@ -1,0 +1,161 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #101827;
+  color: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgb(56 81 124 / 35%), transparent 55%),
+    #101827;
+}
+
+button {
+  font: inherit;
+}
+
+.game-shell {
+  width: min(100%, 1000px);
+}
+
+.game-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 4px 14px;
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: #7dd3fc;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+}
+
+.instructions,
+.hint {
+  color: #bdc8d8;
+  font-size: 0.88rem;
+}
+
+.instructions {
+  margin: 0 0 4px;
+  text-align: right;
+}
+
+.game-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #40516a;
+  border-radius: 16px;
+  background: #8bd5e8;
+  box-shadow: 0 24px 70px rgb(0 0 0 / 30%);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 20px;
+  background: rgb(10 18 31 / 72%);
+  text-align: center;
+}
+
+.game-overlay[hidden] {
+  display: none;
+}
+
+.game-overlay p {
+  margin: 0;
+  font-size: clamp(1.6rem, 6vw, 3rem);
+  font-weight: 800;
+}
+
+.game-overlay button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 22px;
+  background: #fbbf24;
+  color: #172033;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.touch-controls {
+  display: none;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.control-button {
+  min-width: 62px;
+  min-height: 54px;
+  border: 1px solid #536781;
+  border-radius: 14px;
+  background: #202d40;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 800;
+  touch-action: none;
+  user-select: none;
+}
+
+.jump-button {
+  min-width: 108px;
+  margin-left: 12px;
+  font-size: 1rem;
+}
+
+.hint {
+  margin: 12px 4px 0;
+}
+
+@media (max-width: 680px), (pointer: coarse) {
+  body {
+    padding: 18px 12px;
+  }
+
+  .game-header {
+    display: block;
+  }
+
+  .instructions {
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  .touch-controls {
+    display: flex;
+  }
+}
